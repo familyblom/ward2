@@ -9,9 +9,7 @@
   <body>
     <section id="content">
       <h1> My awesome Website</h1>
-      <nav>
-        <ul><li><a href='/posts'>Posts</a></li></ul>
-      </nav>
+      <%= render 'layouts/navigation_bar' %>
       <%= yield %>
     </section>
     <footer>

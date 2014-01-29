@@ -1,12 +1,11 @@
 <h1>All my blog posts</h1>
-
 <% @posts.each do |post| %>
   <article>
     <h2>
       <%=  link_to post.title, post %>
       <small>by <%= post.author %></small>
     </h2>
-    <p>Published <%= time_ago_in_words post.published_at %> ago.</p>
+    <p>Published <%= time_ago_in_words post.published_at if post.published_at%> ago.</p>
   <p>
     <%= post.body %>
   </p>
