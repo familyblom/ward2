@@ -1,0 +1,14 @@
+<h1>Welcome to my fantastic Web Page!!</h1>
+<p>This is Bens Eggett's Page</p>
+
+<% if @post.present? %>
+  <h2> Featured blog post</h2>
+  <hr />
+  <h3> <%= link_to @post.title, post_path(@post) %></h3>
+  <p>
+    <em><%= @post.author %></em> | <%= time_tag( @post.published_at ) %>
+  </p>
+
+  <%= simple_format( truncate(@post.body, length: 300, separator: ' ', omission: "... #{ link_to 'Continue Reading >', post_path(@post) }" ) ) %>
+
+<% end %>

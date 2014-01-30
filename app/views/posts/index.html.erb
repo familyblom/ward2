@@ -1,11 +1,13 @@
 <h1>All my blog posts</h1>
 <% @posts.each do |post| %>
-  <article>
+  <article class="<%= 'featured' if post.featured? %>">
     <h2>
       <%=  link_to post.title, post %>
       <small>by <%= post.author %></small>
+      <% if post.featured? %>
+        <strong>FEATURED POST</strong>
+      <% end %>
     </h2>
-    <p>Published <%= time_ago_in_words post.published_at if post.published_at%> ago.</p>
   <p>
     <%= post.body %>
   </p>
