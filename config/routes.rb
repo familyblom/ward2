@@ -4,7 +4,19 @@ MySite::Application.routes.draw do
 
   # get "/url-path", to: "controller#action", as: :url_path_name
   root to: "static_pages#home"
-  resources :posts
+  resources :posts do
+    post 'comments', to: "posts#create_comment", as: :comments
+  end
+
+  # resources :posts, except: [:index, :show]
+  # get '/posts', to: 'posts#index', as: :posts
+  # get '/posts/:id', to: "posts#show", as: :post
+  # get '/posts/new', to: "posts#new", as: :new_post
+  # get '/posts/:id/edit', to: "posts#edit", as: :edit_post
+  # post '/posts', to: 'posts#create', as: :posts
+  # put '/posts/:id', to: "posts#update", as: :post
+  # delete '/posts/:id', to: "posts#destroy", as: :post
+  # post '/posts/:post_id/comments', to: "posts#create_comment", as: :comments
 
   get "/gallery", to: "static_pages#gallery", as: :gallery
   get "/about-me", to: "static_pages#about_me", as: :about_me

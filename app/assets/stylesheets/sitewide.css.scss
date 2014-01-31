@@ -19,3 +19,31 @@ footer p{
 .featured{
   h2 a{color: red;}
 }
+
+nav{
+  clear: both;
+  h1{ 
+    font-size: 30px;
+    text-shadow: 0 0 3px #1d1d1d;
+    text-align: center;
+  }
+  ul{
+    text-align: center;
+    li{
+      list-style: none;
+      display: inline;
+
+      margin: 0 5px;
+      a{
+        color: white;
+        background: #7c9cbf;
+        padding: 5px 10px;
+        border-radius: 5px;
+        &:hover{
+          color: #7c9cbf;
+          background-color: darken(indigo, 20%)
+        }
+      }
+    }
+  }
+}

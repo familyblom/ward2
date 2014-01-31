@@ -1,4 +1,6 @@
 class Post < ActiveRecord::Base
+  has_many :comments
+
   scope :featured, -> { where(featured: true) }
   scope :ordered, -> {order('published_at DESC')}
   default_scope -> { where("published_at <= ?", Time.now ).order("published_at DESC")}

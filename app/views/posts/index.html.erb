@@ -1,21 +1,6 @@
 <h1>All my blog posts</h1>
 <% @posts.each do |post| %>
-  <article class="<%= 'featured' if post.featured? %>">
-    <h2>
-      <%=  link_to post.title, post %>
-      <small>by <%= post.author %></small>
-      <% if post.featured? %>
-        <strong>FEATURED POST</strong>
-      <% end %>
-    </h2>
-  <p>
-    <%= post.body %>
-  </p>
-  
-  <%= link_to 'Show', post %>
-  <%= link_to 'Edit', edit_post_path(post) %>
-  <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-  </article>
+  <%= render 'posts/post_display', post: post %>
 <% end %>
 
 <%= link_to 'New Post', new_post_path %>
