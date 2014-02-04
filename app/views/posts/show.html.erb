@@ -7,12 +7,14 @@
 
 
 <% @post.comments.each do |comment| %>
-  <h4> 
-    <%= comment.author %>
-    <small> <%= time_tag(comment.created_at) if comment.created_at %> </small>
-  </h4>
-  <%= simple_format(comment.message) %>
-  <hr />
+  <% unless comment.new_record? %>
+    <h4> 
+      <%= comment.author %>
+      <small> <%= time_tag(comment.created_at) %> </small>
+    </h4>
+    <%= simple_format(comment.message) %>
+    <hr />
+  <% end %>
 <% end %>
 
 
