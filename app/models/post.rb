@@ -3,7 +3,7 @@ class Post < ActiveRecord::Base
 
   scope :featured, -> { where(featured: true) }
   scope :ordered, -> {order('published_at DESC')}
-  default_scope -> { where("published_at <= ?", Time.now ).order("published_at DESC")}
+  # default_scope -> { where("published_at <= ?", Time.now ).order("published_at DESC")}
   attr_accessible :author, :title, :body, :featured, :published_at
   validates :author, :body, presence: true
   validates :title, 
