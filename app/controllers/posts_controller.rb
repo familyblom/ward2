@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_filter :authorize, only: [:create, :new, :edit, :update, :destroy]
   # GET /posts
   # GET /posts.json
   def index

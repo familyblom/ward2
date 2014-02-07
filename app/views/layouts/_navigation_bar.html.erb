@@ -1,11 +1,22 @@
 <nav>
-  <h1> My wonderful Website</h1>
+  <h1> My wonderful Website
+    <% if current_user %>
+      <small><%= [current_user.first_name, current_user.last_name].join(' ') %></small>
+    <% end %>
+  </h1>
   <ul>
 
     <li><%= link_to "Home", root_path, id: "home-link", class: "class-1" %></li>
     <li> <%= link_to "My Blog", posts_path  %></li>
     <li> <%= link_to "Gallery", gallery_path  %> </li>
     <li> <%= link_to "About Me", about_me_path %> </li>
+    <% if current_user %>
+      <li> <%= link_to "Sign Out", sign_out_path, method: :delete %> </li>
+
+    <% else %>
+      <li> <%= link_to "Sign Up", sign_up_path %> </li>
+      <li> <%= link_to "Sign In", sign_in_path %> </li>
+    <% end %>
   </ul>
 
 </nav>

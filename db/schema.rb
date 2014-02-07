@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140130233737) do
+ActiveRecord::Schema.define(:version => 20140207000631) do
 
   create_table "comments", :force => true do |t|
     t.text     "message"
@@ -31,6 +31,15 @@ ActiveRecord::Schema.define(:version => 20140130233737) do
     t.boolean  "featured",     :default => false
     t.datetime "created_at",                      :null => false
     t.datetime "updated_at",                      :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "email"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "password_digest"
   end
 
 end
