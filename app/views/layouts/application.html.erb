@@ -1,26 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang='en'>
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>My Site</title>
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <% 360.times do |i| %>
-      <div class="rainbow-<%= i %>"></div>
-    <% end %>
-    <section id="content">
+    <div class='container'>
       <%= render 'layouts/navigation_bar' %>
+      
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, class: name %>
       <% end %>
+      
       <%= yield %>
-    </section>
-    <footer>
-      <p>&copy;<%= Time.now.year %>, Ben Eggett 
-      </p>
+      
+      <footer>
+        <p>&copy;<%= Time.now.year %>, Ben Eggett 
+        </p>
+      </footer>
 
-    </footer>
+    </div>
   </body>
 </html>
