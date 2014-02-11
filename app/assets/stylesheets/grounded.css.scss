@@ -1,0 +1,12 @@
+$page-width: 1200;
+$columns: 12;
+
+@for $i from 0 to $columns{
+  $number: $i + 1;
+  .ground-#{$number}{
+    width: (100% / $columns) * $number;
+    background: lightblue;
+    float: left;
+    margin: 1px 0;    
+  }
+}
