@@ -1,7 +1,21 @@
-$navbar-default-bg: $blue;
-$navbar-default-link-color: lighten($navbar-default-bg, 40%);
+// Set our overriding variables up top
+$headings-font-family: "Julius Sans One", sans-serif;
+$font-family-sans-serif: "Open Sans", sans-serif;
+$headings-color: $red-orange;
 $font-size-base: 16px;
-$brand-primary: #5cbf36;
+
+$navbar-default-bg: $blue;
+$navbar-default-link-color: lighten($navbar-default-bg, 35%);
+
+$brand-primary: $red-orange;
+$brand-success: $green;
+$brand-info: $blue;
+$brand-warning: $yellow;
+$brand-danger: $dark-gray;
+
+// $link-color: ;
+$well-bg: #c2c2c2;
 
 @import "bootstrap";
 
+// Customize CSS under the import 'bootstrap'

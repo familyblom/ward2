@@ -1,6 +1,19 @@
-$blue: #69a5bf;
+// Add your global sass variables up top
+$blue: #409ed5;
+$red-orange: #e33a25;
+$green: #118a37;
+$yellow: #e0c12a;
+$dark-gray: #1d1d1d;
 
+
+// Custom fonts
+@import url(http://fonts.googleapis.com/css?family=Julius+Sans+One|Open+Sans:400,700,300);
+
+@import "mixins";
+
+// Import frameworks
 @import "bootstrap_and_overrides";
+@import "utilities";
 @import "sitewide";
-@import "scaffolds";
 
+@import "static_pages";

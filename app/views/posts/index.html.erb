@@ -1,6 +1,19 @@
-<h1>All my blog posts</h1>
+<div class="page-header">
+  <div class='pull-right'>
+    <%= link_to new_post_path, class: 'btn btn-success' do %>
+      <span class='glyphicon glyphicon-asterisk'></span>
+      New Post
+    <% end %>
+  </div>
+  <h1 class='text-center'>
+    My random thoughts
+    <small> <%= pluralize(@posts.count, 'post') %> </small>
+  </h1>
+</div>
+
 <% @posts.each do |post| %>
   <%= render 'posts/post_display', post: post %>
+  <hr />
 <% end %>
 
-<%= link_to 'New Post', new_post_path %>
+

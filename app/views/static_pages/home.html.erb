@@ -1,19 +1,31 @@
+<div class="row">
+<!--   
+  col-xs-1
+  col-sm-2
+  col-md-3
+  col-lg-4 -->
+  <div class="col-sm-9">
+    <h1 class='text-center'>Welcome to my fantastic Web Page!!</h1>
+    
+    <p>This is Bens Eggett's Page</p>
+ 
+  </div>
+  <div class="col-sm-3 text-center">
+    <%= image_tag "ben-lily.jpeg", class: "img-responsive img-thumbnail" %>
+    <% if @post.present? %>
+      <h2> Featured blog post</h2>
+      <hr />
+      <div class='well red-well'>
+        <h3> <%= link_to @post.title, post_path(@post) %></h3>
+        <p>
+          <em><%= @post.author %></em> | <%= time_tag( @post.published_at ) %>
+        </p>
 
-<h1>Welcome to my fantastic Web Page!!</h1>
-<!-- <img src="<%= image_path "ben-lily.jpeg" %>" /> -->
+        <%= simple_format( truncate(@post.body, length: 300, separator: ' ', omission: "... #{ link_to 'Continue Reading >', post_path(@post) }" ) ) %>
+      </div>
 
-<%#= image_tag "ben-lily.jpeg" %>
-<%#= image_path "ben-lily.jpeg" %>
-<p>This is Bens Eggett's Page</p>
+    <% end %>
 
-<% if @post.present? %>
-  <h2 class='pad-vertical-40'> Featured blog post</h2>
-  <hr />
-  <h3> <%= link_to @post.title, post_path(@post) %></h3>
-  <p>
-    <em><%= @post.author %></em> | <%= time_tag( @post.published_at ) %>
-  </p>
+  </div>  
+</div>
 
-  <%= simple_format( truncate(@post.body, length: 300, separator: ' ', omission: "... #{ link_to 'Continue Reading >', post_path(@post) }" ) ) %>
-
-<% end %>
