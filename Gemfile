@@ -7,7 +7,7 @@ gem 'rails', '3.2.16'
 
 # gem 'sqlite3'
 gem 'pg'
-
+gem 'simple_form'
 
 group :development do
   gem "pry-rails"
