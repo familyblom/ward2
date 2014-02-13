@@ -14,7 +14,11 @@
     <%= render 'layouts/navigation_bar' %>
     <div class='container'>
       <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, class: name %>
+        <div class="alert alert-<%= name == :notice ? 'success' : 'danger'  %> alert-dismissable">
+          
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <%= msg.html_safe %>
+        </div>        
       <% end %>
       
       <%= yield %>

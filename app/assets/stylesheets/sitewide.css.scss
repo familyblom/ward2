@@ -14,16 +14,6 @@ footer p{
   color: white;
   text-shadow: 1px 1px #1d1d1d;
 }
-.notice{
-  background: green;
-  text-align: center;
-  color: white;
-  @include rounded-corners;
-}
-.alert{
-  @extend .notice;
-  background: red;
-}
 
 .featured{
   h2 a{color: red;}

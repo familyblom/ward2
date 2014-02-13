@@ -13,9 +13,33 @@ $brand-info: $blue;
 $brand-warning: $yellow;
 $brand-danger: $dark-gray;
 
+$state-success-text: white;
+$state-success-bg: $brand-success;
+$state-success-border: darken($state-success-bg, 7%);
+
+$state-danger-text: #fff;
+$state-danger-bg: $brand-danger;
+$state-danger-border: darken($state-danger-bg, 7%);
+
+// $state-info-text: "";
+// $state-info-bg: "";
+// $state-info-border: "";
+
+// $state-warning-text: "";
+// $state-warning-bg: "";
+// $state-warning-border: "";
+
+
+
+
 // $link-color: ;
 $well-bg: #c2c2c2;
 
 @import "bootstrap";
 
 // Customize CSS under the import 'bootstrap'
+
+.alert{
+  text-align: center;
+}
+
