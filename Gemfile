@@ -20,6 +20,7 @@ group :development do
   gem 'guard-livereload'
   gem "guard-pow", require: false
   gem 'ruby_gntp'
+  gem "letter_opener"
 end
 
 
