@@ -1,0 +1,15 @@
+<div class='page-header'>
+  <h1> Contact us </h1>
+</div>
+<%= simple_form_for @contact_message, url: create_contact_me_path  do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :name %>
+  <%= f.input :email %>
+  <%= f.input :topic, collection: ["I want to talk to you about building a website", "I want to talk to you about Design", "I'm an old friend who wants to catch up", "I want to hire you", "Other: Explain below"],  prompt: "Tell me what you want to talk about" %>
+  <%= f.input :subject %>
+  <%= f.input :body, input_html: { rows: 5 } %>
+  <div class='text-center'>
+    <%= f.submit "Send me a message", class: "btn btn-primary" %>
+  </div>
+
+<% end %>

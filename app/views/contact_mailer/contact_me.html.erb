@@ -1,0 +1,12 @@
+<h2> You've received a message from: <%= @message.name %> (<%= @message.email %>)</h2>
+
+<h3> <%= @message.topic %></h3>
+
+<h4> <%= @message.subject %></h4>
+
+<%= simple_format @message.body %>
+
+
+<hr />
+
+<p> Contact them within 24-48 hours </p>

@@ -2,6 +2,8 @@ MySite::Application.routes.draw do
 
   resources :users
   
+  get '/contact-me', to: "contact_me#new", as: :contact_me
+  post '/contact-me', to: "contact_me#create", as: :create_contact_me
 
   get "/sign-up", to: "users#new", as: :sign_up
   get "/sign-in", to: "sessions#new", as: :sign_in
