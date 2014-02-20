@@ -1,12 +1,18 @@
-class ContactMessage < ActiveRecord::Base
-  attr_accessible :body, :email, :name, :subject, :topic
+class ContactMessage 
+  include ActiveModel::Validations
+  include ActiveModel::Conversion
+  extend ActiveModel::Naming
+
+  attr_accessor :body, :email, :name, :subject, :topic
   validates :body, :email, :name, :subject, presence: true
-  
-  after_create :send_contact_message
 
-  private
+  def initialize(attributes = {})
+    attributes.each do |name, value| 
+      send("#{name}=", value)
+    end
+  end
 
-  def send_contact_message
-    ContactMailer.contact_me(self).deliver
+  def persisted?
+    false
   end
 end

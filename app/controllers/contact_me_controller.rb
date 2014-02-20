@@ -6,7 +6,8 @@ class ContactMeController < ApplicationController
 
   def create
     @contact_message = ContactMessage.new(params[:contact_message])
-    if @contact_message.save
+    if @contact_message.valid?
+      ContactMailer.contact_me(@contact_message).deliver
       redirect_to root_path, notice: "Thanks, we got your message"
     else
       flash.now.alert = "Looks like you've got problems..."
