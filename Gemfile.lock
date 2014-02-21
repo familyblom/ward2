@@ -45,6 +45,10 @@ GEM
     celluloid-io (0.15.0)
       celluloid (>= 0.15.0)
       nio4r (>= 0.5.0)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.3)
+      climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -103,6 +107,11 @@ GEM
     mime-types (1.25.1)
     multi_json (1.8.4)
     nio4r (1.0.0)
+    paperclip (3.5.4)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.3)
+      mime-types
     pg (0.17.1)
     polyglot (0.3.4)
     pry (0.9.12.6)
@@ -187,6 +196,7 @@ DEPENDENCIES
   jquery-rails
   letter_opener
   meta_request
+  paperclip (~> 3.0)
   pg
   pry-rails
   rack-livereload

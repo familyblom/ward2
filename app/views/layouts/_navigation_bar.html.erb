@@ -23,7 +23,13 @@
 
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
-          <li><%= link_to [current_user.first_name, current_user.last_name].join(' '), edit_user_path(current_user) %></li>
+          <li>
+            
+            <%= link_to edit_user_path(current_user) do %>
+              <%= image_tag( current_user.profile_picture.url(:tiny), class: 'img-circle' ) %>
+              <%= [current_user.first_name, current_user.last_name].join(' ') %>
+            <% end %>
+          </li>
           <li> <%= link_to "Sign Out", sign_out_path, method: :delete %> </li>
         <% else %>
           <li> <%= link_to "Sign Up", sign_up_path %> </li>
