@@ -15,6 +15,12 @@
   <%= @user.last_name %>
 </p>
 
+<% if @user.tags.any? %>
+  <% @user.tags.each do |tag| %>
+    <span class="label label-success">#<%= tag.name %></span>
+  <% end %>
+<% end %>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

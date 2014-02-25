@@ -1,10 +1,10 @@
 <article class="<%= 'featured' if post.featured? %>">
   <div class='pull-right'>
     <%# Two ways of using html within link tags %>
-    
+
     <%= link_to '<span class="glyphicon glyphicon-pencil"></span>'.html_safe, edit_post_path(post), class: "btn btn-info btn-sm" %>
 
-    <%= link_to post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm"  do %> 
+    <%= link_to post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm"  do %>
       <span class="glyphicon glyphicon-trash"></span>
     <% end %>
   </div>
@@ -18,12 +18,19 @@
           Featured
         </span>
       <% end %>
+
+      <% if post.tags.any? %>
+        <% post.tags.each do |tag| %>
+          <span class="label label-success">#<%= tag.name %></span>
+        <% end %>
+      <% end %>
     </small>
-    
+
+
   </h2>
   <p>
     <%= simple_format(post.body) %>
-    
+
   </p>
 
   <p id="comments"> <%= link_to "Comments (#{post.comments.count})", post_path(post) + '#comments' %> </p>
