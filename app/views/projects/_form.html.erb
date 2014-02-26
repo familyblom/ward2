@@ -7,13 +7,24 @@
     <%= f.input :completion_date %>
     <%= f.input :url %>
   </div>
+  <div class='row'>
+    <h3> Tags</h3>
+      <%= f.simple_fields_for :tags do |tag| %>
+        <%= render 'tag_fields', f: tag %>
+      <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'add tag', f, :tags %>
+    </div>
+  </div>
 
-  <h3> Tags</h3>
-    <%= f.simple_fields_for :tags do |tag| %>
-      <%= render 'tag_fields', f: tag %>
-    <% end %>
-  <div class='links'>
-    <%= link_to_add_association 'add tag', f, :tags %>
+  <div class='row'>
+    <h3> Tools</h3>
+      <%= f.simple_fields_for :tools do |tool| %>
+        <%= render 'tool_fields', f: tool %>
+      <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'add tool', f, :tools %>
+    </div>
   </div>
 
   <div class="form-actions">

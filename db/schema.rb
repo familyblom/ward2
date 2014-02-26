@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140225232609) do
+ActiveRecord::Schema.define(:version => 20140226011924) do
 
   create_table "comments", :force => true do |t|
     t.text     "message"
@@ -51,6 +51,15 @@ ActiveRecord::Schema.define(:version => 20140225232609) do
   end
 
   add_index "tags", ["taggable_id"], :name => "index_tags_on_taggable_id"
+
+  create_table "tools", :force => true do |t|
+    t.string   "name"
+    t.integer  "project_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "tools", ["project_id"], :name => "index_tools_on_project_id"
 
   create_table "users", :force => true do |t|
     t.string   "email"

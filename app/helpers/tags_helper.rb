@@ -10,4 +10,14 @@ module TagsHelper
     end
   end
 
+  def display_tools(project)
+    if project.tools.any?
+      content_tag :span do
+        project.tools.each do |tool|
+          concat content_tag(:span, tool.name, class: "label label-info margin-horizontal-5")
+        end
+      end
+    end
+  end
+
 end
