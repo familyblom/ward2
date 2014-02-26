@@ -1,5 +1,15 @@
-<p id="notice"><%= notice %></p>
-
+<div class='row'>
+<% if @project.pictures.any? %>
+  <% @project.pictures.each do |pic| %>
+    <div class='col-sm-3'>
+      <div class='thumbnail'>
+        <%= image_tag(pic.image.url(:medium), class: 'img-responsive img-thumbnail', alt: pic.title) %>
+        <span> <%= pic.title %></span>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+</div>
 <%= display_tags(@project) %>
 <%= display_tools(@project) %>
 
