@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
-    
+
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary-navigation">
         <span class="sr-only">Toggle navigation</span>
@@ -9,12 +9,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">My Awesome Website</a>
+      <a class="navbar-brand" href="/">Ben Eggett</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="primary-navigation">
       <ul class="nav navbar-nav">
+        <li> <%= link_to "Portfolio", projects_path  %></li>
         <li> <%= link_to "My Blog", posts_path  %></li>
         <li> <%= link_to "Gallery", gallery_path  %> </li>
         <li> <%= link_to "About Me", about_me_path %> </li>
@@ -24,7 +25,7 @@
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
           <li>
-            
+
             <%= link_to edit_user_path(current_user) do %>
               <%= image_tag( current_user.profile_picture.url(:tiny), class: 'img-circle' ) %>
               <%= [current_user.first_name, current_user.last_name].join(' ') %>

@@ -1,5 +1,8 @@
 MySite::Application.routes.draw do
 
+  resources :projects
+
+
   resources :users
   
   get '/contact-me', to: "contact_me#new", as: :contact_me

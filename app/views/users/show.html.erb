@@ -15,11 +15,8 @@
   <%= @user.last_name %>
 </p>
 
-<% if @user.tags.any? %>
-  <% @user.tags.each do |tag| %>
-    <span class="label label-success">#<%= tag.name %></span>
-  <% end %>
-<% end %>
+<%= display_tags(@user) %>
+
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

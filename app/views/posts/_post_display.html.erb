@@ -19,11 +19,7 @@
         </span>
       <% end %>
 
-      <% if post.tags.any? %>
-        <% post.tags.each do |tag| %>
-          <span class="label label-success">#<%= tag.name %></span>
-        <% end %>
-      <% end %>
+      <%= display_tags(post) %>
     </small>
 
 
