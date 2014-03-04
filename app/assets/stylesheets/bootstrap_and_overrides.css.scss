@@ -43,3 +43,8 @@ $well-bg: #c2c2c2;
   text-align: center;
 }
 
+ul.inline-block, span.inline-block{
+  li, span{
+    display: inline-block;
+  }
+}

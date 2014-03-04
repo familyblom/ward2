@@ -8,36 +8,7 @@
     <%= link_to image_tag(project.pictures.first.image.url(:medium), class: 'img-responsive'), "#", data: { toggle: 'modal', target: "#project-#{ project.id }"} %>
     <% end %>
   </div>
-<div class="modal fade" id="project-<%= project.id%>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="myModalLabel"><%= project.name %></h4>
-        </div>
-        <div class="modal-body">
-          <div class='col-sm-6'>
-              Pictures
-              <%= image_tag(project.pictures.first.image.url(:large), class: 'img-responsive img-thumbnail' )%>
-              <% project.pictures.each do |pic| %>
-                <div class='col-sm-4'>
-                  <%= image_tag(pic.image.url(:small), class: 'img-responsive img-thumbnail' )%>
-                </div>
-              <% end %>
-
-          </div>
-          <div class='col-sm-6'>
-              Description
-          </div>
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
-        </div>
-      </div>
-    </div>
-  </div>
+  <%= render 'projects/modal', project: project %>
 
 
 <% end %>
