@@ -2,21 +2,16 @@
 
 <%= render 'posts/post_display', post: @post %>
 
-<h3> Add a comment</h3>
-<%= render 'posts/comment_form' %>
-
-
-<% @post.comments.each do |comment| %>
-  <% unless comment.new_record? %>
-    <h4> 
-      <%= comment.author %>
-      <small> <%= time_tag(comment.created_at) %> </small>
-    </h4>
-    <%= simple_format(comment.message) %>
-    <hr />
+<div class='comments-list'>
+  <% @post.comments.each do |comment| %>
+    <% unless comment.new_record? %>
+      <%= render 'posts/show_comment', comment: comment %>
+    <% end %>
   <% end %>
-<% end %>
-
-
+</div>
+<div class='add-comment'>
+  <h3> Add a comment</h3>
+  <%= render 'posts/comment_form' %>
+</div>
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

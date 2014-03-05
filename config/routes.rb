@@ -4,7 +4,7 @@ MySite::Application.routes.draw do
 
 
   resources :users
-  
+
   get '/contact-me', to: "contact_me#new", as: :contact_me
   post '/contact-me', to: "contact_me#create", as: :create_contact_me
 
@@ -18,6 +18,7 @@ MySite::Application.routes.draw do
   root to: "static_pages#home"
   resources :posts do
     post 'comments', to: "posts#create_comment", as: :comments
+    delete 'comments/:comment_id', to: "posts#destroy_comment", as: :destroy_comment
   end
 
   # resources :posts, except: [:index, :show]

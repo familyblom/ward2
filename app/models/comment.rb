@@ -6,6 +6,7 @@ class Comment < ActiveRecord::Base
   validates :message, length: { maximum: 1000}, presence: true
 
   before_validation :set_author_to_anonymous_if_blank
+  default_scope -> {order('created_at ASC')}
 
   private
 

@@ -2,10 +2,9 @@
   <h1> My portfolio</h1>
 </div>
 <% @projects.each do |project| %>
-
   <div class='col-md-3 col-sm-4 col-xs-6 gutter'>
     <% if project.pictures.first %>
-    <%= link_to "#", data: { toggle: 'modal', target: "#project-#{ project.id }"}, class: "thumbnail-links" do %>
+    <%= link_to project_path(project), class: "thumbnail-links", remote: true do %>
       <div class='project-overlay'>
         <h5> <%=project.name %></h5>
         <p> <i class='glyphicon glyphicon-search'></i>View project</p>
@@ -14,9 +13,4 @@
       <% end %>
     <% end %>
   </div>
-  <%= render 'projects/modal', project: project %>
-
-
 <% end %>
-
-
