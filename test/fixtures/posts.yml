@@ -1,0 +1,13 @@
+welcome:
+  author: "Ben"
+  title: "Welcome to my blog"
+  body: "This is the best post you'll read"
+  featured: true
+  published_at: "<%= Time.now + 10.minutes %>"
+
+greetings:
+  author: "Joe"
+  title: "Thanks for visiting"
+  body: "This is the best post you'll read"
+  featured: true
+  published_at: "<%= Time.now + 10.minutes %>"

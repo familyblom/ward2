@@ -18,6 +18,7 @@ group :development do
   gem 'xray-rails'
   gem "rack-livereload"
   gem 'guard'
+  gem 'guard-minitest'
   gem 'guard-livereload'
   gem "guard-pow", require: false
   gem 'ruby_gntp'
