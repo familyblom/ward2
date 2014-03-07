@@ -24,6 +24,9 @@ group :development do
   gem "letter_opener"
 end
 
+group :development, :test do
+  gem "minitest-rails", github: "blowmage/minitest-rails"
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
