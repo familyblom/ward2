@@ -14,7 +14,11 @@ class User < ActiveRecord::Base
 
   after_create :send_welcome_email
 
+  def street_name
+    first_name[0].upcase + '. ' + Faker::DizzleIpsum.word
+  end
   private
+
 
   def send_welcome_email
     UserMailer.welcome(self).deliver
