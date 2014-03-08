@@ -18,7 +18,7 @@ class Post < ActiveRecord::Base
   private
 
   def published_at_is_in_the_future
-    errors.add(:published_at, "Published at must be in the future") unless self.published_at >= Time.now
+    errors.add(:published_at, "time must be in the future") unless self.published_at >= Time.now
   end
 
 end

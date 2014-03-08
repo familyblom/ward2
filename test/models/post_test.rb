@@ -3,7 +3,8 @@ require 'test_helper'
 class PostTest < ActiveSupport::TestCase
 
   def setup
-    @post = posts(:welcome)
+    @post = build(:post)
+    # @saved_post = create(:post)
   end
 
   def tests_default_validity
@@ -27,7 +28,7 @@ class PostTest < ActiveSupport::TestCase
 
   def test_title_must_be_unique
     @post.save
-    duplicate = Post.new title: 'different', body: @post.body, author: @post.author, published_at: Time.now + 5.minutes
+    duplicate = build(:post, title: "Unique")
     assert duplicate.valid?
     duplicate.title = @post.title
     duplicate.save
@@ -42,8 +43,8 @@ class PostTest < ActiveSupport::TestCase
   end
 
   def tests_that_published_at_date_is_in_the_future
-    post = Post.create body: 'ok', author: 'cool', title: "asdfasdf", published_at: (Time.now - 5.minutes)
-    assert post.invalid?
+    @post.published_at = Time.now - 10.minutes
+    assert @post.invalid?, "Time can't be in the past #{@post.errors.full_messages}"
   end
 
   def teardown
