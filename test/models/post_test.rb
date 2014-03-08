@@ -47,8 +47,4 @@ class PostTest < ActiveSupport::TestCase
     assert @post.invalid?, "Time can't be in the past #{@post.errors.full_messages}"
   end
 
-  def teardown
-    Post.destroy_all
-  end
-
 end
