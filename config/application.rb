@@ -64,5 +64,39 @@ module MySite
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.paperclip_defaults = { storage: :s3,
+        s3_credentials: {
+            bucket: ENV["S3_BUCKET"],
+            access_key_id: ENV["AWS_ACCESS_KEY"],
+            secret_access_key: ENV["AWS_SECRET"]
+        },
+        styles: { large: "600x600>",
+                medium: "300x300>",
+                small: "100x100>",
+                tiny: "25x25>"
+         },
+        default_url: "/assets/:attachment/:style.png",
+        path: "/assets/:attachment/:id/:style.:extension"
+    }
+    # :bucket => "xxx", :access_key_id => "xxx", :secret_access_key => "xxx"
   end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

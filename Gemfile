@@ -7,8 +7,9 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'simple_form'
 gem 'jquery-rails'
 gem "paperclip", "~> 3.0"
-
+gem 'figaro'
 gem "cocoon"
+gem "aws-sdk"
 
 group :development do
   gem "pry-rails"
