@@ -1,0 +1,8 @@
+AWS_ACCESS_KEY_ID:            my-secret-aws-key
+AWS_SECRET_ACCESS_KEY:        my-secret-aws-secret-key
+FOG_PROVIDER:                 AWS
+ASSET_SYNC_GZIP_COMPRESSION:  true
+development:
+  FOG_DIRECTORY:              my-s3-bucket
+production:
+  FOG_DIRECTORY:              my-s3-bucket-production
