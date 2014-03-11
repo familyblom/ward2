@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140226014607) do
+ActiveRecord::Schema.define(:version => 20140311223902) do
 
   create_table "comments", :force => true do |t|
     t.text     "message"
@@ -79,13 +79,14 @@ ActiveRecord::Schema.define(:version => 20140226014607) do
     t.string   "email"
     t.string   "first_name"
     t.string   "last_name"
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.datetime "created_at",                                      :null => false
+    t.datetime "updated_at",                                      :null => false
     t.string   "password_digest"
     t.string   "profile_picture_file_name"
     t.string   "profile_picture_content_type"
     t.integer  "profile_picture_file_size"
     t.datetime "profile_picture_updated_at"
+    t.boolean  "lunicorn",                     :default => false
   end
 
 end

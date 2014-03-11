@@ -29,7 +29,11 @@
             <%= link_to edit_user_path(current_user) do %>
               <%= image_tag( current_user.profile_picture.url(:tiny), class: 'img-circle' ) %>
               <%= [current_user.first_name, current_user.last_name].join(' ') %>
+              <% if current_user.is_admin? %>
+                (Admin)
+              <% end %>
             <% end %>
+
           </li>
           <li> <%= link_to "Sign Out", sign_out_path, method: :delete %> </li>
         <% else %>
