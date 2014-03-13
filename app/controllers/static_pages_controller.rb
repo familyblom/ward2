@@ -5,6 +5,7 @@ class StaticPagesController < ApplicationController
   end
 
   def about_me
+    @ip_info = Geolocate.find(request.ip)
   end
 
   def gallery
