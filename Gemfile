@@ -10,7 +10,7 @@ gem "paperclip", "~> 3.0"
 gem 'figaro'
 gem "cocoon"
 gem "aws-sdk"
-
+gem 'hashie'
 
 group :development do
   gem "pry-rails"
