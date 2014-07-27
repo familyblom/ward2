@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140311223902) do
+ActiveRecord::Schema.define(:version => 20140727162824) do
 
   create_table "comments", :force => true do |t|
     t.text     "message"
@@ -54,6 +54,41 @@ ActiveRecord::Schema.define(:version => 20140311223902) do
     t.string   "url"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+  end
+
+  create_table "surveys", :force => true do |t|
+    t.string   "family_name"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
+    t.integer  "primary_phone"
+    t.boolean  "primary_home"
+    t.integer  "secondary_phone"
+    t.boolean  "secondary_home"
+    t.string   "primary_email"
+    t.string   "secondary_email"
+    t.string   "emergency_contact"
+    t.integer  "emergency_contact_phone"
+    t.string   "emergency_contact_relationship"
+    t.boolean  "food_supply"
+    t.integer  "food_amount"
+    t.boolean  "water_supply"
+    t.integer  "water_amount"
+    t.string   "first_name"
+    t.integer  "age"
+    t.string   "email_same"
+    t.string   "special_medical"
+    t.boolean  "skill"
+    t.string   "skill_explained"
+    t.boolean  "medical_training"
+    t.string   "medical_training_explained"
+    t.boolean  "equipment"
+    t.string   "equipment_explained"
+    t.boolean  "tools"
+    t.string   "tools_explained"
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
   end
 
   create_table "tags", :force => true do |t|

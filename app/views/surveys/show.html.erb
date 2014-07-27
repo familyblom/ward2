@@ -1,0 +1,173 @@
+<% if current_user %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Family name:</b>
+  <%= @survey.family_name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @survey.address %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @survey.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @survey.state %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%= @survey.zip %>
+</p>
+
+<p>
+  <b>Primary phone:</b>
+  <%= @survey.primary_phone %>
+</p>
+
+<p>
+  <b>Primary home:</b>
+  <%= @survey.primary_home %>
+</p>
+
+<p>
+  <b>Secondary phone:</b>
+  <%= @survey.secondary_phone %>
+</p>
+
+<p>
+  <b>Secondary home:</b>
+  <%= @survey.secondary_home %>
+</p>
+
+<p>
+  <b>Primary email:</b>
+  <%= @survey.primary_email %>
+</p>
+
+<p>
+  <b>Secondary email:</b>
+  <%= @survey.secondary_email %>
+</p>
+
+<p>
+  <b>Emergency contact:</b>
+  <%= @survey.emergency_contact %>
+</p>
+
+<p>
+  <b>Emergency contact phone:</b>
+  <%= @survey.emergency_contact_phone %>
+</p>
+
+<p>
+  <b>Emergency contact relationship:</b>
+  <%= @survey.emergency_contact_relationship %>
+</p>
+
+<p>
+  <b>Food supply:</b>
+  <%= @survey.food_supply %>
+</p>
+
+<p>
+  <b>Food amount:</b>
+  <%= @survey.food_amount %>
+</p>
+
+<p>
+  <b>Water supply:</b>
+  <%= @survey.water_supply %>
+</p>
+
+<p>
+  <b>Water amount:</b>
+  <%= @survey.water_amount %>
+</p>
+
+<p>
+  <b>First name:</b>
+  <%= @survey.first_name %>
+</p>
+
+<p>
+  <b>Age:</b>
+  <%= @survey.age %>
+</p>
+
+<p>
+  <b>Primary phone:</b>
+  <%= @survey.primary_phone %>
+</p>
+
+<p>
+  <b>Primary home:</b>
+  <%= @survey.primary_home %>
+</p>
+
+<p>
+  <b>Primary email:</b>
+  <%= @survey.primary_email %>
+</p>
+
+<p>
+  <b>Email same:</b>
+  <%= @survey.email_same %>
+</p>
+
+<p>
+  <b>Special medical:</b>
+  <%= @survey.special_medical %>
+</p>
+
+<p>
+  <b>Skill:</b>
+  <%= @survey.skill %>
+</p>
+
+<p>
+  <b>Skill:</b>
+  <%= @survey.skill %>
+</p>
+
+<p>
+  <b>Medical training:</b>
+  <%= @survey.medical_training %>
+</p>
+
+<p>
+  <b>Medical training explained:</b>
+  <%= @survey.medical_training_explained %>
+</p>
+
+<p>
+  <b>Equipment:</b>
+  <%= @survey.equipment %>
+</p>
+
+<p>
+  <b>Equipment explained:</b>
+  <%= @survey.equipment_explained %>
+</p>
+
+<p>
+  <b>Tools:</b>
+  <%= @survey.tools %>
+</p>
+
+<p>
+  <b>Tools explained:</b>
+  <%= @survey.tools_explained %>
+</p>
+
+
+<%= link_to 'Edit', edit_survey_path(@survey) %> |
+<%= link_to 'Go Home', root_path %>
+
+<% end %>

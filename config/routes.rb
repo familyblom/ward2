@@ -1,5 +1,7 @@
 MySite::Application.routes.draw do
 
+  resources :surveys
+
   resources :projects
 
 

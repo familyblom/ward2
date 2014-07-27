@@ -6,6 +6,7 @@
   <%= f.input :last_name %>
   <% if current_user.try(:is_admin?) %>
     <%= f.input :lunicorn %>
+  <%= link_to "Show Taken Surveys", surveys_path %>
   <% end %>
   <% if controller.action_name == 'new' or controller.action_name == 'create'  %>
     <%= f.input :password %>

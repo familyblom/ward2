@@ -1,0 +1,96 @@
+<% if current_user && current_user.try(:is_admin?) %>
+<h1>Listing surveys</h1>
+
+<table>
+  <tr>
+    <th>Family name</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Primary phone</th>
+    <th>Primary home</th>
+    <th>Secondary phone</th>
+    <th>Secondary home</th>
+    <th>Primary email</th>
+    <th>Secondary email</th>
+    <th>Emergency contact</th>
+    <th>Emergency contact phone</th>
+    <th>Emergency contact relationship</th>
+    <th>Food supply</th>
+    <th>Food amount</th>
+    <th>Water supply</th>
+    <th>Water amount</th>
+    <th>First name</th>
+    <th>Age</th>
+    <th>Primary phone</th>
+    <th>Primary home</th>
+    <th>Primary email</th>
+    <th>Email same</th>
+    <th>Special medical</th>
+    <th>Skill</th>
+    <th>Skill</th>
+    <th>Medical training</th>
+    <th>Medical training explained</th>
+    <th>Equipment</th>
+    <th>Equipment explained</th>
+    <th>Tools</th>
+    <th>Tools explained</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @surveys.each do |survey| %>
+  <tr>
+    <td><%= survey.family_name %></td>
+    <td><%= survey.address %></td>
+    <td><%= survey.city %></td>
+    <td><%= survey.state %></td>
+    <td><%= survey.zip %></td>
+    <td><%= survey.primary_phone %></td>
+    <td><%= survey.primary_home %></td>
+    <td><%= survey.secondary_phone %></td>
+    <td><%= survey.secondary_home %></td>
+    <td><%= survey.primary_email %></td>
+    <td><%= survey.secondary_email %></td>
+    <td><%= survey.emergency_contact %></td>
+    <td><%= survey.emergency_contact_phone %></td>
+    <td><%= survey.emergency_contact_relationship %></td>
+    <td><%= survey.food_supply %></td>
+    <td><%= survey.food_amount %></td>
+    <td><%= survey.water_supply %></td>
+    <td><%= survey.water_amount %></td>
+    <td><%= survey.first_name %></td>
+    <td><%= survey.age %></td>
+    <td><%= survey.primary_phone %></td>
+    <td><%= survey.primary_home %></td>
+    <td><%= survey.primary_email %></td>
+    <td><%= survey.email_same %></td>
+    <td><%= survey.special_medical %></td>
+    <td><%= survey.skill %></td>
+    <td><%= survey.skill %></td>
+    <td><%= survey.medical_training %></td>
+    <td><%= survey.medical_training_explained %></td>
+    <td><%= survey.equipment %></td>
+    <td><%= survey.equipment_explained %></td>
+    <td><%= survey.tools %></td>
+    <td><%= survey.tools_explained %></td>
+    <td><%= link_to 'Show', survey %></td>
+    <td><%= link_to 'Edit', edit_survey_path(survey) %></td>
+    <td><%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<h1> Total number of surveys taken = <%= @surveys.count %></h1>
+
+<%= link_to 'New Survey', new_survey_path %>
+
+<% else %>
+
+<h1>You must be an administrator to view this content</h1>
+<div class="btn btn-success" style="color:white"><%= link_to 'Go Home', root_path %></div>
+
+<% end %>
