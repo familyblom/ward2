@@ -4,30 +4,35 @@
 
       <h1>1. Household Contact Information</h1>
       <p>Please list information for your household only. We will ask more specific questions regarding household members later in the survey</p>
+      <div class="col-md-6">
         <div><%= f.input :family_name, label: "Family Name" %></div>
         <div><%= f.input :address, label: "Address" %></div>
         <div><%= f.input :city, label: "City" %></div>
         <div><%= f.input :state, label: "State" %></div>
         <div><%= f.input :zip, label: "Zip Code" %></div>
+      </div>
+      <div class="col-md-6">
         <div><%= f.input :primary_phone, label: "Primary Phone Number" %></div>
         <div><%= f.input :secondary_phone, label: "Secondary Phone Number" %></div>
         <div><%= f.input :primary_email, label: "Primary Email" %></div>
         <div><%= f.input :secondary_email, label: "Secondary Email" %></div>
+        <div class="col-md-6" style="height: 78px;"></div>
+      </div>
 
       <h1>2. Household Emergency Contact Information</h1>
-        <div><%= f.input :emergency_contact, label: "Emergency Contact Name" %></div>
-        <div><%= f.input :emergency_contact_phone, label: "Emergency Contact Phone" %></div>
-        <div><%= f.input :emergency_contact_relationship, label: "What is the Relationship?" %></div>
+        <div class="col-md-4"><%= f.input :emergency_contact, label: "Emergency Contact Name" %></div>
+        <div class="col-md-4"><%= f.input :emergency_contact_phone, label: "Emergency Contact Phone" %></div>
+        <div class="col-md-4"><%= f.input :emergency_contact_relationship, label: "What is the Relationship?" %></div>
 
       <h1>3. Household Emergency Preparedness</h1>
-        <div><%= f.input :food_supply, label: "Do you maintain consistent food storage? (check if yes)", :input_html => { :class => 'food' } %></div>
-        <div style="width: 200px; display: inline-block; margin-left: 30px;" class="foodSelected"><%= f.input :food_amount, label: "What is the amount of days you can feed all members of your household" %></div>
-        <div><%= f.input :water_supply, label: "Do you maintain consistent water storage? (check if yes)", :input_html => { :class => 'water' } %></div>
-        <div class="waterSelected" style="width: 200px; display: inline-block; margin-left: 30px;"><%= f.input :water_amount, label: "What is the amount of water storage in gallons" %></div>
-        <div><%= f.input :equipment, label: "Do you have any machinery that can assist in debris removal (check if yes)", :input_html => { :class => 'equipment' } %></div>
-          <div style="width: 200px; display: inline-block; margin-left: 30px;" class="equipmentSelected"><%= f.input :equipment_explained, label: "Tell us your equipment" %></div>
-        <div><%= f.input :tools, label: "Do you have any other tools that could be useful in case of an emergency (check if yes)", :input_html => { :class => 'tools' } %></div>
-        <div style="width: 200px; display: inline-block; margin-left: 30px;" class="toolsSelected"><%= f.input :tools_explained, label: "Tell us about your tools" %></div>
+        <div class="col-md-12"><%= f.input :food_supply, label: "Do you maintain consistent food storage? (check if yes)", :input_html => { :class => 'food' } %></div>
+        <div style="margin-left: 30px;" class="foodSelected col-md-12"><%= f.input :food_amount, label: "What is the amount of days you can feed all members of your household" %></div>
+        <div class="col-md-12"><%= f.input :water_supply, label: "Do you maintain consistent water storage? (check if yes)", :input_html => { :class => 'water' } %></div>
+        <div class="waterSelected col-md-12" style="margin-left: 30px;"><%= f.input :water_amount, label: "What is the amount of water storage in gallons" %></div>
+        <div class="col-md-12"><%= f.input :equipment, label: "Do you have any machinery that can assist in debris removal (check if yes)", :input_html => { :class => 'equipment' } %></div>
+        <div style="margin-left: 30px;" class="equipmentSelected col-md-12"><%= f.input :equipment_explained, label: "Tell us your equipment" %></div>
+        <div class="col-md-12"><%= f.input :tools, label: "Do you have any other tools that could be useful in case of an emergency (check if yes)", :input_html => { :class => 'tools' } %></div>
+        <div style="margin-left: 30px;" class="toolsSelected col-md-12"><%= f.input :tools_explained, label: "Tell us about your tools" %></div>
 
       <h1>4. Individual Household Member Information</h1>
        <div class="addMember">
@@ -44,10 +49,10 @@
           <div><%= f.input :special_medical, label: "Does this household member have any special needs that you wish response personnel to know about? Please make note that you are voluntarily providing any information in this block and that this form does not adhere to HIPPA regulations. For more information about HIPPA please go to " %></div>
 
           <h4>4.3 Household Member Special Skills</h4>
-          <div><%= f.input :skill, label: "Do you have ANY skills that might be beneficial in an emergency? (check if yes)", :input_html => { :class => 'skills' } %></div>
-          <div style="width: 200px; display: inline-block; margin-left: 30px;" class="skillsSelected"><%= f.input :skill_explained, label: "Tell us about your skill" %></div>
-          <div><%= f.input :medical_training, label: "Do you have any formal medical training (check if yes)", :input_html => { :class => 'training' } %></div>
-          <div style="width: 200px; display: inline-block; margin-left: 30px;" class="trainingSelected"><%= f.input :medical_training_explained, label: "Tell us about your medical training" %></div>
+          <div class="col-md-12"><%= f.input :skill, label: "Do you have ANY skills that might be beneficial in an emergency? (check if yes)", :input_html => { :class => 'skills' } %></div>
+          <div style="margin-left: 30px;" class="skillsSelected col-md-12"><%= f.input :skill_explained, label: "Tell us about your skill" %></div>
+          <div class="col-md-12"><%= f.input :medical_training, label: "Do you have any formal medical training (check if yes)", :input_html => { :class => 'training' } %></div>
+          <div style="margin-left: 30px;" class="trainingSelected col-md-12"><%= f.input :medical_training_explained, label: "Tell us about your medical training" %></div>
           <div class="hidden"><%= f.input :user_id, input_html: { value: current_user.id }%></div>
           <span class="addMemberBtn">Hello</span>
         </div>
