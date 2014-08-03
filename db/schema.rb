@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(:version => 20140727162824) do
     t.string   "equipment_explained"
     t.boolean  "tools"
     t.string   "tools_explained"
+    t.integer  "user_id"
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false
   end

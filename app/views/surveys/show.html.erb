@@ -169,5 +169,8 @@
 
 <%= link_to 'Edit', edit_survey_path(@survey) %> |
 <%= link_to 'Go Home', root_path %>
+<% if current_user.lunicorn %>
+  | <%= link_to 'All Surveys', surveys_path %>
+<% end %>
 
 <% end %>

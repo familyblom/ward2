@@ -35,6 +35,7 @@ class CreateSurveys < ActiveRecord::Migration
       t.string :equipment_explained
       t.boolean :tools
       t.string :tools_explained
+      t.integer :user_id
 
       t.timestamps
     end

@@ -1,8 +1,11 @@
 <% if current_user %>
-
-<h1>New survey</h1>
+  <%# if  Survey.where(user_id: current_user.id) %>
+Edit your current survey
+  <%# else %>
+<h1>Emergency Survey Form</h1>
+<p><strong>This survey consists of 4 sections and should take no more than 10 minutes to complete for a family of 5. Through this information we will have an accurate record of needs and abilities in case of an emergency. Thank you for taking the time to complete it!</strong></p>
 
 <%= render 'form' %>
-
+  <% end %>
 <%= link_to 'Go Home', root_path %>
-<% end %>
+<%# end %>

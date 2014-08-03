@@ -17,3 +17,75 @@ $dark-gray: #1d1d1d;
 @import "sitewide";
 @import "projects";
 @import "static_pages";
+
+.foodSelected .control-label {
+  width: 600px;
+  font-weight: 500;
+}
+.foodSelected .form-group {
+  display: -webkit-inline-box;
+}
+.foodSelected .form-control {
+  width: 200px;
+  margin-top: -15px;
+}
+
+.waterSelected .control-label {
+  width: 400px;
+  font-weight: 500;
+}
+.waterSelected .form-group {
+  display: -webkit-inline-box;
+}
+.waterSelected .form-control {
+  width: 200px;
+  margin-top: -15px;
+}
+
+.equipmentSelected .control-label {
+  width: 210px;
+  font-weight: 500;
+}
+.equipmentSelected .form-group {
+  display: -webkit-inline-box;
+}
+.equipmentSelected .form-control {
+  width: 800px;
+  margin-top: -15px;
+}
+
+.toolsSelected .control-label {
+  width: 210px;
+  font-weight: 500;
+}
+.toolsSelected .form-group {
+  display: -webkit-inline-box;
+}
+.toolsSelected .form-control {
+  width: 800px;
+  margin-top: -15px;
+}
+
+.skillsSelected .control-label {
+  width: 210px;
+  font-weight: 500;
+}
+.skillsSelected .form-group {
+  display: -webkit-inline-box;
+}
+.skillsSelected .form-control {
+  width: 800px;
+  margin-top: -15px;
+}
+
+.trainingSelected .control-label {
+  width: 268px;
+  font-weight: 500;
+}
+.trainingSelected .form-group {
+  display: -webkit-inline-box;
+}
+.trainingSelected .form-control {
+  width: 800px;
+  margin-top: -15px;
+}
